@@ -16,7 +16,7 @@
     --primary-color: hsl(150deg 41% 35%);
     --dark-wrapper-color: var(--dark-green);
     --body-font:
-        "Manrope",
+        "Quicksand",
         -apple-system,
         "BlinkMacSystemFont",
         "Segoe UI",
@@ -248,7 +248,7 @@ code {
     color: black;
     font-family: var(--body-font);
     font-size: clamp(15px, 25vh, min(50px, 5vw));
-    font-weight: 400;
+    font-weight: 500;
     padding: 0;
     margin: 0;
 }
@@ -271,6 +271,12 @@ code {
     padding-bottom: 16px;
     margin: 0;
 }
+
+.blurb br {
+        display: block;
+        content: "";
+        margin-top: 1.15em;
+    }
 
 .about-wrapper {
     width: 100%;
@@ -352,6 +358,11 @@ code {
         color: white;
     }
 
+.dark .blurb a {
+        color: var(--pink-highlight);
+        font-weight: 700;
+    }
+
 .dark .tooltip,
 .dark .blinker::after {
     color: var(--pink-highlight);
@@ -421,6 +432,7 @@ code {
     border: 3px solid var(--border-color);
     background-color: var(--grey);
     transition: background-color 0.3s ease;
+    font-weight: 500;
 }
 
 
