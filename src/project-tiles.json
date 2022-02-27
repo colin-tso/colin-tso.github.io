@@ -1,0 +1,48 @@
+{
+    "projects": [
+        {
+            "title": "Simple Form",
+            "description": "A simple HTML5 submission form with various form inputs.",
+            "webLink": "./simple-form",
+            "githubLink": "https://github.com/colin-tso/simple-form",
+            "thumb": "./img/simple-form.jpg",
+            "langList": [
+                "HTML5",
+                "CSS3"
+            ]
+        },
+        {
+            "title": "Simple Tribute Page",
+            "description": "A simple tribute page honoring Chester Bennington.",
+            "webLink": "./simple-tribute-page",
+            "githubLink": "https://github.com/colin-tso/simple-tribute-page",
+            "thumb": "./img/simple-tribute-page-thumb.jpg",
+            "langList": [
+                "HTML5",
+                "CSS3"
+            ]
+        },
+        {
+            "title": "Lorem Ipsum Documentation",
+            "description": "A documentation page for Lorem Ipsum programming code.",
+            "webLink": "./simple-documentation-page",
+            "githubLink": "https://github.com/colin-tso/simple-documentation-page",
+            "thumb": "./img/simple-documentation-page-thumb.jpg",
+            "langList": [
+                "HTML5",
+                "CSS3"
+            ]
+        },
+        {
+            "title": "Quanta Labs Landing Page",
+            "description": "A product landing page for the fictional Quanta Labs.",
+            "webLink": "./quanta-labs-landing",
+            "githubLink": "https://github.com/colin-tso/quanta-labs-landing",
+            "thumb": "./img/quanta-labs-landing-thumb.jpg",
+            "langList": [
+                "HTML5",
+                "CSS3"
+            ]
+        }
+    ]
+}
