@@ -3,10 +3,9 @@ const postcss = require('gulp-postcss'),
     autoprefixer = require('autoprefixer'),
     postcss_nested = require('postcss-nested'),
     sourcemaps = require('gulp-sourcemaps'),
-    pug = require('gulp-pug'),
-    data = require('gulp-data'),
-    fs = require('fs'),
-    // fileinclude = require('gulp-file-include'),
+    concat = require('gulp-concat'),
+    rename = require('gulp-rename'),
+    del = require('del'),
     cssnano = require('gulp-cssnano'),
     gulp = require('gulp'),
     processors = [
@@ -14,36 +13,24 @@ const postcss = require('gulp-postcss'),
         postcss_nested
     ];
 
-const rename = require('gulp-rename');
-
 gulp.task('pcss_to_css', function () {
-    return gulp.src('./src/*.pcss')
-        //.pipe(concatcss('style.pcss'))
-        .pipe(sourcemaps.init())
+    return gulp.src('./src/*/*.pcss')
         .pipe(postcss(processors))
         .pipe(cssnano())
         .pipe(rename({
             extname: '.css'
         }))
-        .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('./dist'));
+        .pipe(gulp.dest('./temp'));
 });
 
-/* 
-gulp.task('build:pug', function () {
-    return gulp.src('./src/*.pug')
-        .pipe(data(function (file) {
-            return JSON.parse(fs.readFileSync('./src/project-tiles.json'))
-        }))
-        .pipe(pug())
-        .pipe(gulp.dest('./dist'));
-}); */
+gulp.task('css_concat', function () {
+    return gulp.src('./temp/*.css')
+        .pipe(sourcemaps.init())
+        .pipe(concat('bundle.css'))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('./dist'))
+});
 
-/* gulp.task('HTML:fileinclude', function () {
-    gulp.src(['./src/*.html'])
-        .pipe(fileinclude({
-            prefix: '@@',
-            basepath: '@file'
-        }))
-        .pipe(gulp.dest('./dist'));
-}); */
+gulp.task('clean_temp', function () {
+    return del(['./temp']);
+});

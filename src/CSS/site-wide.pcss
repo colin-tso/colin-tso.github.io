@@ -1,0 +1,89 @@
+/* stylelint-disable at-rule-no-vendor-prefix */
+/* stylelint-disable property-no-vendor-prefix */
+/* stylelint-disable value-no-vendor-prefix */
+/* stylelint-disable no-descending-specificity */
+
+/* SITE-WIDE STYLES */
+
+// Force mobile browsers to trigger hover
+.mhover {
+  cursor: pointer;
+}
+
+.button-link {
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  color: white;
+  font-weight: 400;
+  padding: 20px;
+  text-decoration: none;
+  width: fit-content;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: var(--link-hover-color);
+  }
+}
+
+.blurb {
+  font-size: 16px;
+  margin: 0;
+  padding-bottom: 16px;
+  padding-top: 0;
+    
+  & br {
+    content: '';
+    display: block;
+    margin-top: 1.15em;
+  }
+}
+
+
+/* STYLE FOR SVG ICONS */
+[class^="svg-icon-"] {
+  display: inline-block;
+  max-height: 35px;
+  fill: var(--primary-color);
+  transition: all 0.2s ease;
+}
+
+.icon-container {
+  vertical-align: middle;
+  width: 100%;
+  
+  & [class^="svg-icon-"] {
+    padding: 0 5px;
+  }
+}
+
+.icon-text {
+  vertical-align: middle;
+  margin-left: 10px;
+  border-bottom: solid 1px rgb(0 0 0 / 0%);
+  transition: all 0.2s ease;
+}
+
+
+/* STYLING FOR DARK PANELS */
+
+.dark {
+  background-color: var(--dark-wrapper-color);
+  color: white;
+
+  & code,
+  & h1 {
+    color: white;
+  }
+
+  & .blurb a {
+    color: var(--pink-highlight);
+    font-weight: 700;
+    text-decoration: inherit;
+    border-bottom: 1px dotted var(--pink-highlight-fade);
+    transition: all 0.2s ease;
+
+    &:hover {
+      border-bottom: 1px solid var(--pink-highlight);
+    }
+  }
+}

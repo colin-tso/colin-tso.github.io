@@ -1,0 +1,75 @@
+/* STYLING FOR NAVBAR */
+.navbar-wrapper {
+    background-color: var(--navbar-color);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    flex-flow: row nowrap;
+    font-family: var(--mono-font);
+    height: 75px;
+    left: 0;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 99;
+  
+    & a {
+        color: inherit;
+        text-decoration: inherit;
+        transition: color 0.2s ease;
+  
+        &:hover {
+            color: var(--link-hover-color);
+  
+            &::after {
+                animation-duration: 1.2s;
+                animation-iteration-count: infinite;
+                animation-name: blinker;
+                animation-timing-function: steps(2, jump-none);
+                color: var(--link-hover-color);
+                content: '_';
+                position: absolute;
+            }
+        }
+    }
+}
+  
+.navbar-left {
+    font-family: var(--body-font);
+    font-size: 2em;
+    font-weight: 400;
+    margin: auto;
+    padding: 0 2vw;
+    width: 10%;
+    pointer-events: none;
+}
+  
+.navbar-right {
+    color: black;
+    display: flex;
+    font-size: clamp(10px, 1em, 2.5vw);
+    font-weight: 500;
+    margin: auto;
+    width: 100%;
+  
+    & > ul {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: right;
+        list-style: none;
+        padding-left: 0;
+        padding-right: max(2vw, 20px);
+        width: 100%;
+  
+        & > li {
+            margin: 0;
+            padding-left: 2em;
+            position: relative;
+  
+            &::before {
+                color: var(--primary-color);
+                content: '> ';
+            }
+        }
+    }
+}

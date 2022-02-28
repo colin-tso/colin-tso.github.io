@@ -1,0 +1,22 @@
+.blinker::after {
+    animation-duration: 1.2s;
+    animation-iteration-count: infinite;
+    animation-name: blinker;
+    animation-timing-function: steps(2, jump-none);
+    color: var(--primary-color);
+    content: '_';
+}
+
+.dark .blinker::after {
+    color: var(--pink-highlight);
+}
+
+@keyframes blinker {
+    from {
+        visibility: visible;
+    }
+  
+    to {
+        visibility: hidden;
+    }
+}

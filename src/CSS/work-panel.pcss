@@ -1,0 +1,41 @@
+/* STYLING FOR WORK EXPERIENCE PANEL */
+.work-wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    margin: auto;
+    max-width: 985px;
+    min-height: 100vh;
+    min-width: 338.13px;
+    padding: 20px 0;
+    width: 80%;
+  
+    & svg g > path {
+        stroke: var(--primary-color);
+        stroke-miterlimit: 50;
+        stroke-linejoin: round;
+        stroke-width: 10px;
+        fill: rgb(255 255 255 / 0%);
+    }
+  
+    & .tooltip {
+        color: var(--primary-color);
+        word-wrap: break-word;
+    }
+}
+  
+.svg-keyboard {
+    align-self: center;
+    margin: 0 auto 75px;
+    max-width: 650px;
+}
+
+[id^='svg-keyboard-key-'] {
+    transition: all 0.1s ease-out 0.05s;
+  
+    &:hover {
+        transform: translate(0, 10px);
+        stroke: var(--link-hover-color);
+        transition: all 0.1s ease-out;
+    }
+}

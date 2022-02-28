@@ -1,0 +1,52 @@
+/* STYLING FOR WELCOME PANEL */
+.welcome-wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0 15%;
+}
+  
+.welcome-name {
+    color: black;
+    font-family: var(--body-font);
+    font-size: clamp(45px, 25vh, min(60px, 5vw));
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+}
+  
+.subtitle {
+    color: var(--primary-color);
+    font-size: clamp(15px, 25vh, min(50px, 5vw));
+    font-weight: 400;
+    margin: 0;
+}
+  
+.welcome-blurb {
+    font-size: 16px;
+    margin: 0;
+    padding: 25px 0 50px;
+  
+    & br {
+        content: '';
+        display: block;
+        margin-top: 1em;
+    }
+}
+
+.profile-link {
+    margin-bottom: 75px;
+    display: inline;
+    color: inherit;
+    text-decoration: inherit;
+  
+    &:hover [class^="svg-icon-"] {
+        filter: brightness(120%) saturate(80%);
+        transform: translateY(-5px);
+    }
+  
+    &:hover > .icon-text {
+        border-bottom: solid 1px rgb(0 0 0 / 100%);
+    }
+}

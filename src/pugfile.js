@@ -8,5 +8,5 @@ var locals = require('./project-tiles.json');
 // fs.writeFileSync("./src/projectTiles.html", html);
 
 // Compile the template to a function string
-var clientCompile = pug.compileFileClient('./src/project-tiles.pug', { name: 'projectTiles' });
+var clientCompile = pug.compileFileClient('./src/project-tiles.pug', { name: 'projectTiles', compileDebug: false });
 fs.writeFileSync("./dist/projectTiles.js", clientCompile);
