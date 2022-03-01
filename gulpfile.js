@@ -24,7 +24,7 @@ gulp.task('pcss_to_css', function () {
 });
 
 gulp.task('css_concat', function () {
-    return gulp.src('./temp/*.css')
+    return gulp.src('./temp/*/*.css')
         .pipe(sourcemaps.init())
         .pipe(concat('bundle.css'))
         .pipe(sourcemaps.write('.'))
