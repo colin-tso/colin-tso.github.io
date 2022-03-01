@@ -43,6 +43,19 @@
                 "HTML5",
                 "CSS3"
             ]
+        },
+        {
+            "title": "Random Quote Machine",
+            "description": "A random quote generator.",
+            "webLink": "./random-quote-machine",
+            "githubLink": "https://github.com/colin-tso/random-quote-machine",
+            "thumb": "./img/random-quote-machine-thumb.jpg",
+            "langList": [
+                "HTML5",
+                "CSS3",
+                "jQuery",
+                "Granim.js"
+            ]
         }
     ]
 }

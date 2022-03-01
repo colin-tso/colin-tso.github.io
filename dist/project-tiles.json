@@ -5,7 +5,7 @@
             "description": "A simple HTML5 submission form with various form inputs.",
             "webLink": "./simple-form",
             "githubLink": "https://github.com/colin-tso/simple-form",
-            "thumb": "./img/simple-form-thumb.jpg",
+            "thumb": "./img/simple-form.jpg",
             "langList": [
                 "HTML5",
                 "CSS3"
@@ -42,6 +42,19 @@
             "langList": [
                 "HTML5",
                 "CSS3"
+            ]
+        },
+        {
+            "title": "Random Quote Machine",
+            "description": "A random quote generator.",
+            "webLink": "./random-quote-machine",
+            "githubLink": "https://github.com/colin-tso/random-quote-machine",
+            "thumb": "./img/random-quote-machine-thumb.jpg",
+            "langList": [
+                "HTML5",
+                "CSS3",
+                "jQuery",
+                "Granim.js"
             ]
         }
     ]
