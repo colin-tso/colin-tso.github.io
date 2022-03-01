@@ -1,1 +1,0 @@
-.blinker:after{animation-duration:1.2s;animation-iteration-count:infinite;animation-name:a;animation-timing-function:steps(2,jump-none);color:var(--primary-color);content:"_"}.dark .blinker:after{color:var(--pink-highlight)}@keyframes a{0%{visibility:visible}to{visibility:hidden}}
