@@ -5,7 +5,7 @@
             "description": "A simple HTML5 submission form with various form inputs.",
             "webLink": "./simple-form",
             "githubLink": "https://github.com/colin-tso/simple-form",
-            "thumb": "./img/simple-form.jpg",
+            "thumb": "./img/simple-form-thumb.jpg",
             "langList": [
                 "HTML5",
                 "CSS3"
