@@ -60,7 +60,7 @@
         {
             "title": "Random Quote Machine (ReactJS)",
             "description": "A variant of the random quote generator built using ReactJS.",
-            "webLink": "./random-quote-machine",
+            "webLink": "./random-quote-machine-react",
             "githubLink": "https://github.com/colin-tso/random-quote-machine-react",
             "thumb": "./img/random-quote-machine-thumb.jpg",
             "langList": [
