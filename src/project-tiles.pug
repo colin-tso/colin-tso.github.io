@@ -1,7 +1,7 @@
 each project in projects
     .project-tile
         a.mhover(href=project.webLink  target='_blank')
-        img(src=project.thumb  alt='Thumbnail of Project 4')
+        img(src=project.thumb  alt=`Thumbnail for ${project.title}`)
         h2=project.title
         main=project.description
         // icon list
