@@ -34,3 +34,8 @@ gulp.task('css_concat', function () {
 gulp.task('clean_temp', function () {
     return del(['./temp']);
 });
+
+gulp.task('copy_projects_json', function () {
+    return gulp.src('src/project-tiles.json')
+        .pipe(gulp.dest('./dist'));
+});
