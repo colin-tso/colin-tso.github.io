@@ -56,6 +56,28 @@
                 "jQuery",
                 "Granim.js"
             ]
+        },
+        {
+            "title": "Random Quote Machine (ReactJS)",
+            "description": "A variant of the random quote generator built using ReactJS.",
+            "webLink": "./random-quote-machine",
+            "githubLink": "https://github.com/colin-tso/random-quote-machine-react",
+            "thumb": "./img/random-quote-machine-thumb.jpg",
+            "langList": [
+                "HTML5",
+                "CSS3",
+                "ReactJS"
+            ]
+        },
+        {
+            "title": "Dynamic Wallpaper for Windows 10",
+            "description": "A python-based program for Windows 10 that dynamically changes and fades your desktop wallpaper based on the time of day.",
+            "webLink": "https://github.com/colin-tso/Py-Dynamic-Wallpaper-for-Windows-10/releases/latest",
+            "githubLink": "https://github.com/colin-tso/Py-Dynamic-Wallpaper-for-Windows-10",
+            "thumb": "./img/python-wallpaper.jpg",
+            "langList": [
+                "Python"
+            ]
         }
     ]
 }
