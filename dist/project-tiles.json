@@ -78,6 +78,18 @@
             "langList": [
                 "Python"
             ]
+        },
+        {
+            "title": "Markdown Previewer",
+            "description": "An Markdown (.md) editor with live preview built with ReactJS",
+            "webLink": "https://github.com/colin-tso/markdown-previewer",
+            "githubLink": "https://github.com/colin-tso/markdown-previewer",
+            "thumb": "./img/markdown-previewer-thumb.jpg",
+            "langList": [
+                "ReactJS",
+                "marked",
+                "highlight.js"
+            ]
         }
     ]
 }
