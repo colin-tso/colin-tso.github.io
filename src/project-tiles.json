@@ -82,7 +82,7 @@
         {
             "title": "Markdown Previewer",
             "description": "An Markdown (.md) editor with live preview built with ReactJS",
-            "webLink": "https://github.com/colin-tso/markdown-previewer",
+            "webLink": "https://colin-tso.github.io/markdown-previewer/",
             "githubLink": "https://github.com/colin-tso/markdown-previewer",
             "thumb": "./img/markdown-previewer-thumb.jpg",
             "langList": [
