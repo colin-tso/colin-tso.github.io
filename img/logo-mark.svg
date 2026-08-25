@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="512"
+   height="512"
+   viewBox="0 0 512 512"
+   role="img"
+   title="Colin Tso"
+   version="1.1"
+   id="svg6"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+   <title
+     id="title1">Colin Tso</title>
+   <style
+     id="style1">
+    .logo-bg { fill: #0a1a28; }
+    .logo-gear { fill: #eaf2f6; stroke: #eaf2f6;}
+    .logo-tube { fill: #eaf2f6; }
+    @media (prefers-color-scheme: dark) {
+      .logo-bg { fill: #eaf2f6; }
+      .logo-gear { fill: #0a1a28; stroke: #0a1a28; }
+      .logo-tube { fill: #0a1a28; }
+    }
+  </style>
+   <defs
+     id="defs1">
+      <clipPath
+       id="squircle">
+         <rect
+         x="0"
+         y="0"
+         width="512"
+         height="512"
+         rx="112"
+         ry="112"
+         id="rect1" />
+      </clipPath>
+   </defs>
+   <g
+     clip-path="url(#squircle)"
+     id="g2">
+      <rect
+       class="logo-bg"
+       x="0"
+       y="0"
+       width="512"
+       height="512"
+       id="rect2" />
+   </g>
+   <g
+     class="logo-gear"
+     id="g3">
+      <path
+       id="path11"
+       class=""
+       d="M 225.86523 28.494141 L 184.43164 37.957031 L 180.78125 72.166016 L 159.10547 82.617188 L 130.11523 64.158203 L 96.960938 90.568359 L 108.53516 122.99414 L 93.5 141.77148 L 59.390625 137.70312 L 40.894531 175.98242 L 65.408203 200.18164 L 60.044922 223.61133 L 27.5 234.77148 L 27.5 277.22852 L 60.044922 288.38867 L 65.408203 311.81836 L 40.894531 336.01758 L 59.390625 374.29688 L 93.5 370.22852 L 108.53516 389.00586 L 96.960938 421.43164 L 130.11523 447.8418 L 159.10547 429.38281 L 180.78125 439.83398 L 184.43164 474.04297 L 225.86523 483.50586 L 244.01367 454.19922 L 267.98633 454.19922 L 286.13477 483.50586 L 327.56836 474.04297 L 331.21875 439.83398 L 352.89453 429.38281 L 381.88477 447.8418 L 415.03906 421.43164 L 403.46484 389.00586 L 418.5 370.22852 L 452.60938 374.29688 L 471.10547 336.01758 L 446.5918 311.81836 L 451.95508 288.38867 L 484.5 277.22852 L 484.5 234.77148 L 451.95508 223.61133 L 446.5918 200.18164 L 471.10547 175.98242 L 452.60938 137.70312 L 418.5 141.77148 L 403.46484 122.99414 L 415.03906 90.568359 L 381.88477 64.158203 L 352.89453 82.617188 L 331.21875 72.166016 L 327.56836 37.957031 L 286.13477 28.494141 L 267.98633 57.800781 L 244.01367 57.800781 L 225.86523 28.494141 z M 256 106 C 338.84271 106 406 173.15729 406 256 C 406 338.84271 338.84271 406 256 406 C 173.15729 406 106 338.84271 106 256 C 106 173.15729 173.15729 106 256 106 z " />
+   </g>
+   <g
+     class="logo-tube"
+     id="g6">
+      <circle
+       cx="256"
+       cy="327.2"
+       r="52"
+       class="tube"
+       id="circle4" />
+      <circle
+       cx="193.6"
+       cy="220.4"
+       r="52"
+       class="tube"
+       id="circle5" />
+      <circle
+       cx="318.4"
+       cy="220.4"
+       r="52"
+       class="tube"
+       id="circle6" />
+   </g>
+   <metadata
+     id="metadata11">
+      <rdf:RDF>
+         <cc:Work
+         rdf:about="">
+            <dc:title>Colin Tso</dc:title>
+         </cc:Work>
+      </rdf:RDF>
+   </metadata>
+</svg>

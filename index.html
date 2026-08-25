@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Colin Tso &ndash; Engineering Tools</title>
+        <meta
+            name="description"
+            content="Colin Tso is a Chemical Engineer who builds free, browser-based engineering tools, including a tube sheet layout generator and visualiser."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" id="theme-color-meta" content="#0a1a28" />
+        <meta property="og:title" content="Colin Tso – Engineering Tools" />
+        <meta
+            property="og:description"
+            content="Colin Tso is a Chemical Engineer who builds free, browser-based engineering tools, including a tube sheet layout generator and visualiser."
+        />
+        <meta property="og:image" content="https://colin-tso.github.io/img/profile.png" />
+        <meta property="og:url" content="https://colin-tso.github.io" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Colin Tso – Engineering Tools" />
+        <meta
+            name="twitter:description"
+            content="Free, browser-based engineering tools for process engineers."
+        />
+        <meta name="twitter:image" content="https://colin-tso.github.io/img/profile.png" />
+        <script>
+            // Set the theme before first paint to avoid a flash of the wrong
+            // theme. Mirrors the read logic in the toggle script below.
+            (function () {
+                try {
+                    var stored = localStorage.getItem("theme-preference");
+                    var theme =
+                        stored === "dark" || stored === "light"
+                            ? stored
+                            : window.matchMedia("(prefers-color-scheme: dark)").matches
+                              ? "dark"
+                              : "light";
+                    document.documentElement.setAttribute("data-theme", theme);
+                } catch (e) {
+                    document.documentElement.setAttribute("data-theme", "dark");
+                }
+            })();
+        </script>
+        <link
+            rel="preload"
+            href="fonts/InterVariable.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="preload"
+            href="fonts/CommitMono-VariableFont.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link rel="stylesheet" href="css/variables.css" />
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/components.css" />
+        <link rel="stylesheet" href="css/sections.css" />
+    </head>
+    <body>
+        <div class="crop tl"></div>
+        <div class="crop tr"></div>
+        <div class="crop bl"></div>
+        <div class="crop br"></div>
+
+        <header class="titleblock">
+            <div class="tb-row">
+                <div class="tb-mark">
+                    <img
+                        src="img/logo-mark.svg"
+                        alt=""
+                        class="logo-mark"
+                        width="28"
+                        height="28"
+                    />COLIN TSO
+                </div>
+                <div class="tb-right">
+                    <nav class="tb-links">
+                        <a href="#about" data-i="1">About</a>
+                        <a href="#work" data-i="2">Work</a>
+                        <a href="#projects" data-i="3">Projects</a>
+                        <a href="#contact" data-i="4">Contact</a>
+                    </nav>
+                    <label class="theme-toggle" aria-label="Toggle dark or light theme">
+                        <input type="checkbox" id="theme-switch" />
+                        <span class="track">
+                            <svg
+                                class="icon sun"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                aria-hidden="true"
+                            >
+                                <path
+                                    d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0-15a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1zm0 18a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1zM4.22 4.22a1 1 0 0 1 1.42 0l.7.71a1 1 0 1 1-1.41 1.41l-.71-.7a1 1 0 0 1 0-1.42zm13.44 13.44a1 1 0 0 1 1.42 0l.7.71a1 1 0 1 1-1.41 1.41l-.71-.7a1 1 0 0 1 0-1.42zM1 12a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2H2a1 1 0 0 1-1-1zm18 0a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2h-1a1 1 0 0 1-1-1zM4.22 19.78a1 1 0 0 1 0-1.42l.7-.7a1 1 0 1 1 1.42 1.41l-.71.71a1 1 0 0 1-1.41 0zM17.66 6.34a1 1 0 0 1 0-1.42l.7-.7a1 1 0 1 1 1.42 1.41l-.71.71a1 1 0 0 1-1.41 0z"
+                                />
+                            </svg>
+                            <svg
+                                class="icon moon"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                aria-hidden="true"
+                            >
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" />
+                            </svg>
+                            <span class="thumb"></span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <!-- HERO -->
+            <section class="hero">
+                <div class="wrap">
+                    <div class="hero-grid">
+                        <div>
+                            <div class="eyebrow">Chemical & Process Engineer / Coder</div>
+                            <div class="greeting">Hi, I'm Colin.</div>
+                            <h1>
+                                I build tools for <span class="hl">engineers</span> who'd rather not
+                                do it by hand.
+                            </h1>
+                            <p class="lede">
+                                I'm a Chemical & Process Engineer working on safety-critical systems
+                                in the oil &amp; gas industry. In my own time I turn the
+                                calculations engineers normally do by hand or in paid design
+                                software into spreadsheets and free, fast, browser-based tools.
+                            </p>
+                            <div class="cta-row">
+                                <a class="btn primary" href="#projects">View the work</a>
+                                <a class="btn ghost" href="#contact">Get in touch</a>
+                            </div>
+                            <div class="icon-row">
+                                <a
+                                    href="https://github.com/colin-tso"
+                                    target="_blank"
+                                    aria-label="GitHub"
+                                >
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                                        />
+                                    </svg>
+                                </a>
+                                <a
+                                    href="https://www.linkedin.com/in/colintso/"
+                                    target="_blank"
+                                    aria-label="LinkedIn"
+                                >
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                                        />
+                                    </svg>
+                                </a>
+                                <a href="mailto:colintso@hotmail.com" aria-label="Email">
+                                    <svg viewBox="0 0 75.294 75.294">
+                                        <path
+                                            d="M66.097,12.089h-56.9C4.126,12.089,0,16.215,0,21.286v32.722c0,5.071,4.126,9.197,9.197,9.197h56.9c5.071,0,9.197-4.126,9.197-9.197V21.287C75.295,16.215,71.169,12.089,66.097,12.089z M61.603,18.089L37.647,33.523L13.691,18.089H61.603z M66.097,57.206h-56.9C7.434,57.206,6,55.771,6,54.009V21.457l29.796,19.16c0.04,0.025,0.083,0.042,0.124,0.065c0.043,0.024,0.087,0.047,0.131,0.069c0.231,0.119,0.469,0.215,0.712,0.278c0.025,0.007,0.05,0.01,0.075,0.016c0.267,0.063,0.537,0.102,0.807,0.102c0.001,0,0.002,0,0.002,0c0.002,0,0.003,0,0.004,0c0.27,0,0.54-0.038,0.807-0.102c0.025-0.006,0.05-0.009,0.075-0.016c0.243-0.063,0.48-0.159,0.712-0.278c0.044-0.022,0.088-0.045,0.131-0.069c0.041-0.023,0.084-0.04,0.124-0.065l29.796-19.16v32.551C69.295,55.771,67.86,57.206,66.097,57.206z"
+                                        />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="hero-art" aria-hidden="true">
+                            <span class="tag a">LAYOUT&nbsp;PREVIEW</span>
+                            <span class="tag b">30&deg; · 151 TUBES</span>
+                            <svg viewBox="0 0 300 300">
+                                <line class="crosshair" x1="150" y1="10" x2="150" y2="290" />
+                                <line class="crosshair" x1="10" y1="150" x2="290" y2="150" />
+                                <circle class="otl" cx="150" cy="150" r="132" />
+                                <g id="tube-field"></g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ABOUT -->
+            <section id="about">
+                <div class="wrap">
+                    <div class="dim">
+                        <span class="tick"></span><span class="rule"></span
+                        ><span class="label">01 &nbsp;/&nbsp; About</span><span class="rule"></span
+                        ><span class="tick"></span>
+                    </div>
+
+                    <div class="about-grid">
+                        <div>
+                            <h2>Engineer. Code. Share.</h2>
+                            <p>
+                                Hello, I'm Colin. My interest in code goes back to 2005, making a
+                                <a
+                                    class="inline"
+                                    href="https://www.kongregate.com/games/colintso/spaceship-escape-3"
+                                    target="_blank"
+                                    >Flash game</a
+                                >
+                                in ActionScript 2.0. (Flash support is gone from most browsers now,
+                                so your mileage may vary with that link.)
+                            </p>
+                            <p>
+                                These days I write code to solve problems I actually run into as a
+                                practising Chemical & Process Engineer. I take calculations that are
+                                normally done by hand or in paid design software, and turn them into
+                                spreadsheets or free, fast, browser-based tools. Getting the
+                                underlying engineering right comes first, before tackling the
+                                interface to make it worth using.
+                            </p>
+
+                            <div class="stack-title">Build with</div>
+                            <div class="chip-row">
+                                <span class="chip">TypeScript</span>
+                                <span class="chip">React</span>
+                                <span class="chip">Vite</span>
+                                <span class="chip">Node.js</span>
+                                <span class="chip">Web Workers</span>
+                                <span class="chip">Python</span>
+                            </div>
+
+                            <div class="stack-title">Engineering tools I use daily</div>
+                            <div class="chip-row">
+                                <span class="chip">Aspen HYSYS</span>
+                                <span class="chip">Aspen FLARENET</span>
+                                <span class="chip">HTRI</span>
+                                <span class="chip">ProTreat</span>
+                                <span class="chip">Excel</span>
+                                <span class="chip">VBA</span>
+                            </div>
+                        </div>
+
+                        <div class="plate">
+                            <img src="./img/profile.png" alt="A photo of Colin Tso" />
+                            <div class="plate-cap"><span>FIG. 01</span><span>PORTRAIT</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- WORK -->
+            <section id="work">
+                <div class="wrap">
+                    <div class="dim">
+                        <span class="tick"></span><span class="rule"></span
+                        ><span class="label">02 &nbsp;/&nbsp; Work</span><span class="rule"></span
+                        ><span class="tick"></span>
+                    </div>
+
+                    <div class="work-block">
+                        <div>
+                            <h2>Built for engineers.</h2>
+                            <p>
+                                I currently work as a
+                                <span
+                                    class="tooltip"
+                                    title="A Chemical Engineer combines the jobs of a chemist and industrial engineer, developing processes to convert raw material into useful products."
+                                    >Chemical & Process Engineer</span
+                                >
+                                in the oil &amp; gas industry, focused on safety-critical engineered
+                                systems.
+                            </p>
+                            <p>
+                                Day to day that means a lot of hand calculations, spreadsheets, and
+                                design software like
+                                <span
+                                    class="tooltip"
+                                    title="Aspen HYSYS is a chemical plant simulation package, widely used in the chemicals industry."
+                                    >Aspen HYSYS</span
+                                >
+                                — exactly the kind of rules-based work that makes for a good coding
+                                project.
+                            </p>
+                            <div class="callout">
+                                // I build the tools I wish existed on the job, and share them
+                                below.
+                            </div>
+                        </div>
+                        <svg class="p-and-id" viewBox="0 0 400 300" aria-hidden="true">
+                            <defs>
+                                <marker
+                                    id="arrow"
+                                    viewBox="0 0 10 10"
+                                    refX="8"
+                                    refY="5"
+                                    markerWidth="6"
+                                    markerHeight="6"
+                                    orient="auto-start-reverse"
+                                >
+                                    <path class="pid-arrow" d="M0,0 L10,5 L0,10 z"></path>
+                                </marker>
+                                <path id="flow-path-1" d="M100,62 L327.5,62" />
+                                <path id="flow-path-2" d="M65,85 L65,205 L270,205" />
+                                <path id="flow-path-3" d="M100,62 L220,62 L220,150" />
+                                <mask
+                                    id="flow-mask"
+                                    maskUnits="userSpaceOnUse"
+                                    x="0"
+                                    y="0"
+                                    width="400"
+                                    height="300"
+                                >
+                                    <rect x="0" y="0" width="400" height="300" fill="white" />
+                                    <rect
+                                        x="30"
+                                        y="40"
+                                        width="70"
+                                        height="45"
+                                        rx="2"
+                                        fill="black"
+                                    />
+                                    <circle cx="220" cy="62" r="30" fill="black" />
+                                    <rect
+                                        x="300"
+                                        y="35"
+                                        width="55"
+                                        height="55"
+                                        rx="2"
+                                        fill="black"
+                                    />
+                                    <rect
+                                        x="60"
+                                        y="180"
+                                        width="90"
+                                        height="60"
+                                        rx="2"
+                                        fill="black"
+                                    />
+                                    <circle cx="270" cy="205" r="34" fill="black" />
+                                </mask>
+                            </defs>
+                            <g class="pid-shapes" fill="none" stroke-width="1.4">
+                                <rect x="30" y="40" width="70" height="45" rx="2"></rect>
+                                <circle cx="220" cy="62" r="30"></circle>
+                                <rect x="300" y="35" width="55" height="55" rx="2"></rect>
+                                <rect x="60" y="180" width="90" height="60" rx="2"></rect>
+                                <circle cx="270" cy="205" r="34"></circle>
+                            </g>
+                            <g class="pid-lines" stroke-width="1.2" marker-end="url(#arrow)">
+                                <line x1="100" y1="62" x2="188" y2="62"></line>
+                                <line x1="250" y1="62" x2="298" y2="62"></line>
+                                <line x1="65" y1="85" x2="65" y2="178"></line>
+                                <line x1="150" y1="205" x2="234" y2="205"></line>
+                                <line x1="220" y1="92" x2="220" y2="150"></line>
+                            </g>
+                            <g class="pid-labels" font-family="Commit Mono" font-size="10">
+                                <text
+                                    x="65"
+                                    y="62.5"
+                                    text-anchor="middle"
+                                    dominant-baseline="central"
+                                >
+                                    V-101
+                                </text>
+                                <text
+                                    x="220"
+                                    y="62"
+                                    text-anchor="middle"
+                                    dominant-baseline="central"
+                                >
+                                    C-102
+                                </text>
+                                <text
+                                    x="327.5"
+                                    y="62.5"
+                                    text-anchor="middle"
+                                    dominant-baseline="central"
+                                >
+                                    E-103
+                                </text>
+                                <text
+                                    x="105"
+                                    y="210"
+                                    text-anchor="middle"
+                                    dominant-baseline="central"
+                                >
+                                    T-104
+                                </text>
+                                <text
+                                    x="270"
+                                    y="205"
+                                    text-anchor="middle"
+                                    dominant-baseline="central"
+                                >
+                                    C-105
+                                </text>
+                            </g>
+                            <g mask="url(#flow-mask)">
+                                <circle class="pid-flow" r="5" fill="var(--accent)">
+                                    <animateMotion
+                                        dur="3s"
+                                        repeatCount="indefinite"
+                                        media="(prefers-reduced-motion: no-preference)"
+                                    >
+                                        <mpath href="#flow-path-1" />
+                                    </animateMotion>
+                                    <animate
+                                        attributeName="opacity"
+                                        values="0;1;1;0"
+                                        keyTimes="0;0.05;0.95;1"
+                                        dur="3s"
+                                        repeatCount="indefinite"
+                                        media="(prefers-reduced-motion: no-preference)"
+                                    />
+                                </circle>
+                                <circle class="pid-flow" r="5" fill="var(--accent)">
+                                    <animateMotion
+                                        dur="3s"
+                                        repeatCount="indefinite"
+                                        media="(prefers-reduced-motion: no-preference)"
+                                    >
+                                        <mpath href="#flow-path-2" />
+                                    </animateMotion>
+                                    <animate
+                                        attributeName="opacity"
+                                        values="0;1;1;0"
+                                        keyTimes="0;0.05;0.95;1"
+                                        dur="3s"
+                                        repeatCount="indefinite"
+                                        media="(prefers-reduced-motion: no-preference)"
+                                    />
+                                </circle>
+                                <circle class="pid-flow" r="5" fill="var(--accent)">
+                                    <animateMotion
+                                        dur="3s"
+                                        repeatCount="indefinite"
+                                        media="(prefers-reduced-motion: no-preference)"
+                                    >
+                                        <mpath href="#flow-path-3" />
+                                    </animateMotion>
+                                    <animate
+                                        attributeName="opacity"
+                                        values="0;1;1;0"
+                                        keyTimes="0;0.05;0.95;1"
+                                        dur="3s"
+                                        repeatCount="indefinite"
+                                        media="(prefers-reduced-motion: no-preference)"
+                                    />
+                                </circle>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROJECTS -->
+            <section id="projects">
+                <div class="wrap">
+                    <div class="dim">
+                        <span class="tick"></span><span class="rule"></span
+                        ><span class="label">03 &nbsp;/&nbsp; Projects</span
+                        ><span class="rule"></span><span class="tick"></span>
+                    </div>
+                    <p class="proj-intro">
+                        Free, browser-based engineering tools built to solve real problems from my
+                        own work.
+                    </p>
+
+                    <div class="proj-grid">
+                        <article class="sheet span2">
+                            <div class="sheet-viewport">
+                                <img
+                                    src="./img/tubesheet-generator-thumb.png"
+                                    alt="Screenshot of the Tubesheet Layout Generator and Visualiser app"
+                                />
+                            </div>
+                            <div class="sheet-body">
+                                <div class="sheet-tag">Web App</div>
+                                <h3>Tubesheet Layout Generator &amp; Visualiser</h3>
+                                <p>
+                                    A calculator and visualiser for tube sheet layouts. Define tube
+                                    OD, pitch, clearance and layout angle, and get back the tube
+                                    count, a live layout sketch, and the minimum shell ID, with
+                                    SVG/PNG export. Built on a standalone TypeScript module,
+                                    published separately below.
+                                </p>
+                            </div>
+                            <div class="sheet-foot">
+                                <div class="sheet-tags">
+                                    <span>React</span><span>TypeScript</span><span>Vite</span
+                                    ><span>Web Workers</span>
+                                </div>
+                                <div class="sheet-links">
+                                    <a
+                                        href="https://github.com/colin-tso/tubesheet-generator-react-app"
+                                        target="_blank"
+                                        aria-label="View source on GitHub"
+                                    >
+                                        <svg viewBox="0 0 24 24">
+                                            <path
+                                                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                                            />
+                                        </svg>
+                                    </a>
+                                    <a
+                                        href="https://colin-tso.github.io/tubesheet-generator-react-app"
+                                        target="_blank"
+                                        aria-label="Open live app"
+                                    >
+                                        <svg viewBox="0 0 52 52">
+                                            <path
+                                                d="M48.7,2H29.6C28.8,2,28,2.5,28,3.3v3C28,7.1,28.7,8,29.6,8h7.9c0.9,0,1.4,1,0.7,1.6l-17,17c-0.6,0.6-0.6,1.5,0,2.1l2.1,2.1c0.6,0.6,1.5,0.6,2.1,0l17-17c0.6-0.6,1.6-0.2,1.6,0.7v7.9c0,0.8,0.8,1.7,1.6,1.7h2.9c0.8,0,1.5-0.9,1.5-1.7v-19C50,2.5,49.5,2,48.7,2z"
+                                            />
+                                            <path
+                                                d="M36.3,25.5L32.9,29c-0.6,0.6-0.9,1.3-0.9,2.1v11.4c0,0.8-0.7,1.5-1.5,1.5h-21C8.7,44,8,43.3,8,42.5v-21C8,20.7,8.7,20,9.5,20H21c0.8,0,1.6-0.3,2.1-0.9l3.4-3.4c0.6-0.6,0.2-1.7-0.7-1.7H6c-2.2,0-4,1.8-4,4v28c0,2.2,1.8,4,4,4h28c2.2,0,4-1.8,4-4V26.2C38,25.3,36.9,24.9,36.3,25.5z"
+                                            />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="sheet">
+                            <div class="sheet-viewport code">
+                                <div class="code-bar">
+                                    <span></span><span></span><span></span>
+                                    <span class="lbl">install.sh</span>
+                                </div>
+                                <!--prettier-ignore-->
+                                <div class="code-body"><span class="c1">$</span> npm install colin-tso/tubesheet-generator
+
+<span class="c1">import</span> { <span class="c2">TubeSheet</span> } <span class="c1">from</span> <span class="c4">"tubesheet-generator"</span>;
+
+<span class="c1">const</span> ts = <span class="c1">new</span> <span class="c2">TubeSheet</span>(<span class="c3">6.35</span>, <span class="c3">19.05</span>, <span class="c3">1.25</span>, <span class="c3">30</span>, <span class="c1">undefined</span>, <span class="c3">500</span>);
+
+ts.numTubes; <span class="c1">// 151</span>
+ts.OTL;      <span class="c1">// 1583.93</span>
+ts.minID;    <span class="c1">// 1653.93</span></div>
+                            </div>
+                            <div class="sheet-body">
+                                <div class="sheet-tag">Library</div>
+                                <h3>tubesheet-generator</h3>
+                                <p>
+                                    The framework-free TypeScript module behind the layout math
+                                    above &mdash; tube counting, tube positions, and SVG generation
+                                    for tube sheets. Synced from the app's plugin source on every
+                                    release, so the published module always matches what's live.
+                                </p>
+                            </div>
+                            <div class="sheet-foot">
+                                <div class="sheet-tags">
+                                    <span>TypeScript</span><span>Node.js</span><span>Vitest</span>
+                                </div>
+                                <div class="sheet-links">
+                                    <a
+                                        href="https://github.com/colin-tso/tubesheet-generator"
+                                        target="_blank"
+                                        aria-label="View source on GitHub"
+                                    >
+                                        <svg viewBox="0 0 24 24">
+                                            <path
+                                                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                                            />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="sheet pending">
+                            <div class="inner">
+                                <span class="plus">+</span>
+                                <p>More tools in the works.<br />Check back soon.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONTACT -->
+            <section id="contact">
+                <div class="wrap">
+                    <div class="dim">
+                        <span class="tick"></span><span class="rule"></span
+                        ><span class="label">04 &nbsp;/&nbsp; Contact</span
+                        ><span class="rule"></span><span class="tick"></span>
+                    </div>
+
+                    <div class="contact-grid">
+                        <div>
+                            <h2>Let's get in touch.</h2>
+                            <p>
+                                Got a use case for one of my tools, an idea for a new one, or just
+                                want to talk engineering and code? My inbox is always open — feel
+                                free to say hi. I'll try my best to get back to you.
+                            </p>
+                            <a class="btn primary" href="mailto:colintso@hotmail.com">Say hello</a>
+                        </div>
+
+                        <div class="fields">
+                            <div class="field">
+                                <span class="k">Name</span><span class="v">Colin Tso</span>
+                            </div>
+                            <div class="field">
+                                <span class="k">Discipline</span
+                                ><span class="v">Chemical & Process Engineer</span>
+                            </div>
+                            <div class="field">
+                                <span class="k">Email</span
+                                ><span class="v"
+                                    ><a href="mailto:colintso@hotmail.com"
+                                        >colintso@hotmail.com</a
+                                    ></span
+                                >
+                            </div>
+                            <div class="field">
+                                <span class="k">GitHub</span
+                                ><span class="v"
+                                    ><a href="https://github.com/colin-tso" target="_blank"
+                                        >@colin-tso</a
+                                    ></span
+                                >
+                            </div>
+                            <div class="field">
+                                <span class="k">LinkedIn</span
+                                ><span class="v"
+                                    ><a href="https://www.linkedin.com/in/colintso/" target="_blank"
+                                        >in/colintso</a
+                                    ></span
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="wrap">
+                <span>SHEET 01/01 &nbsp;·&nbsp; COLIN TSO PORTFOLIO</span>
+                <span>REV A &nbsp;·&nbsp; 2026</span>
+            </div>
+        </footer>
+
+        <script type="module" src="js/hero-art.js"></script>
+        <script type="module" src="js/theme.js"></script>
+        <script type="module" src="js/pid-flow.js"></script>
+        <script type="module" src="js/sw-register.js"></script>
+    </body>
+</html>
