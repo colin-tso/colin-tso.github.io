@@ -1,20 +1,46 @@
-# This script deploys your website automatically
+# Deploys the static site to GitHub Pages using GitHub's native Pages actions
 name: CI
 
-# Only trigger this script when you push to the master branch
 on:
-  push:
-    branches: [ main ]
+    push:
+        branches: [main]
 
-# Specify the tasks to run when this script gets triggered
+# Allow one concurrent deployment
+concurrency:
+    group: "pages"
+    cancel-in-progress: true
+
+# Permissions needed for the deploy-pages action
+permissions:
+    contents: read
+    pages: write
+    id-token: write
+
 jobs:
-  build:
-    runs-on: ubuntu-latest
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
 
-    # Download our master branch
-    steps:
-    - uses: actions/checkout@v4
+            # Stage only the files you want published, mirroring your old
+            # gh-pages -s "{index.html,css/**,img/**,fonts/**,sw.js}" selection
+            - name: Prepare pages directory
+              run: |
+                  mkdir -p _site
+                  cp -r index.html css img fonts sw.js _site/
 
-    # Run our deployment command
-    - name: Deploying the static website to gh-pages
-      run: npm run deploy
+            - name: Upload artifact
+              uses: actions/upload-pages-artifact@v3
+              with:
+                  path: _site
+
+    deploy:
+        needs: build
+        runs-on: ubuntu-latest
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+        steps:
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v4
